@@ -6,9 +6,13 @@ import 'firebase/compat/auth';
 import axios from 'axios';
 
 const config = {
-  apiKey: '',
-  authDomain: ''
+//   apiKey: 'AIzaSyA7s_URPH4wqeG5HDwaO04Iiup96sAltVY',
+//   authDomain: 'protean-atom-410915.firebaseapp.com'
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: 'protean-atom-410915.firebaseapp.com'
 };
+
+console.log(config);
 
 firebase.initializeApp(config);
 
@@ -24,7 +28,7 @@ export const AuthProviderFirebase = ({ children }) => {
 
   const signInWithGoogle = async () => {
     const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-    await firebase.auth().signInWithPopup(googleAuthProvider);
+    await firebase.auth().signInWithPopup(googleAuthProvider)
   };
 
   const signOut = async () => {
