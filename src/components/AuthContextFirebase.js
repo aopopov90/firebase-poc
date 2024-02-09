@@ -6,10 +6,8 @@ import 'firebase/compat/auth';
 import axios from 'axios';
 
 const config = {
-//   apiKey: 'AIzaSyA7s_URPH4wqeG5HDwaO04Iiup96sAltVY',
-//   authDomain: 'protean-atom-410915.firebaseapp.com'
   apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: 'protean-atom-410915.firebaseapp.com'
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN
 };
 
 console.log(config);
