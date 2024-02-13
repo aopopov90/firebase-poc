@@ -1,7 +1,7 @@
 // UserInfo.js
 import React, { useState, useEffect } from 'react';
 import { useAuthFirebase } from './AuthContextFirebase';
-import axios from 'axios';
+import axiosInstance from '../axiosConfig';
 
 const UserInfo = () => {
   const { authUser } = useAuthFirebase();
@@ -15,11 +15,13 @@ const UserInfo = () => {
           // Attach the JWT as a header
           const token = await authUser.getIdToken();
           setJwt(token);
-          const response = await axios.get('http://localhost:8080/sessions', {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
+          // const response = await axios.get('http://localhost:8080/sessions', {
+          //   headers: {
+          //     Authorization: `Bearer ${token}`,
+          //   },
+          // });
+
+          const response = await axiosInstance.get('http://localhost:8080/sessions');
 
           // Handle the response data
           setUserData(response.data);
