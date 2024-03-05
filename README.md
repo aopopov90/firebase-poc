@@ -1,3 +1,6 @@
+## Useful links
+- [Firebase Authentication State Persistence](https://firebase.google.com/docs/auth/web/auth-state-persistence)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
